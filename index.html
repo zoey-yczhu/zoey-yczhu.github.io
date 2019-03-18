@@ -362,88 +362,17 @@
       
         
           
-            <h2 id="什么是-Hexo？"><a href="#什么是-Hexo？" class="headerlink" title="什么是 Hexo？"></a>什么是 Hexo？</h2><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-<h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>点击进入<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js官网</a>，下载稳定版或最新版进行安装。</p>
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>点击<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">这里</a>进入git的下载网站，下载git的安装包进行安装。</p>
-<h2 id="开始搭建"><a href="#开始搭建" class="headerlink" title="开始搭建"></a>开始搭建</h2><h3 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h3><p>点击<a href="https://github.com/" target="_blank" rel="noopener">这里</a>，进入官网进行注册。</p>
-<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>登录后，在页面的左侧点击”New”按钮，进行仓库的创建。</p>
-<p>在仓库名输入框中输入：</p>
-<pre><code>github昵称.github.io
-</code></pre><p><img src="http://img01.sogoucdn.com/app/a/100520146/3b3a0b2fe0ede6bedb30bddbcebdbacd" alt="创建仓库"></p>
-<p>然后点击”创建仓库”即可。</p>
-<h3 id="生成并添加秘钥"><a href="#生成并添加秘钥" class="headerlink" title="生成并添加秘钥"></a>生成并添加秘钥</h3><p>在电脑任意位置点击鼠标右键，选择Git Bash Here，输入：</p>
-<pre><code>ssh-keygen -t rsa -C github的注册邮箱
-</code></pre><p>连续三次回车<br>待秘钥生成完毕，在C:/Users/用户名/.ssh/目录下会得到两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code>，用带格式的记事本（推荐sublime text）打开<code>id_rsa.pub</code>，复制里面的所有内容，然后进入<a href="https://github.com/settings/ssh" target="_blank" rel="noopener">https://github.com/settings/ssh</a>：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/291600-3bff2a591beb2bb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="此处输入图片的描述"></p>
-<p>将复制的内容粘贴到Key的输入框，点击”Add SSH key”按钮即可。</p>
-<h3 id="安装并配置hexo"><a href="#安装并配置hexo" class="headerlink" title="安装并配置hexo"></a>安装并配置hexo</h3><p>在你喜欢的位置创建一个文件夹存放hexo文件（接下来我们的操作都将在Git Bash中进行）</p>
-<ul>
-<li><p>打开本地放置博客的文件夹</p>
-</li>
-<li><p>下载安装hexo</p>
-<p>  右击鼠标，选择”Git Bash Here”，输入：<br>  npm install -g hexo-cli</p>
-</li>
-<li><p>安装好hexo以后，在bash输入：</p>
-<p>  hexo</p>
-</li>
-<li><p>初始化博客（//后的文字为注释，不用操作，执行命令即可）</p>
-</li>
-</ul>
-<p>// 建立一个博客文件夹，并初始化博客，folder为文件夹的名称，可自定义</p>
-<pre><code>hexo init folder
-</code></pre><p>// 进入博客文件夹，folder为自定义的文件夹名称。</p>
-<pre><code>cd folder
-</code></pre><p>// node.js的命令，根据博客既定的dependencies配置安装所有的依赖包。</p>
-<pre><code>npm install
-</code></pre><ul>
-<li>配置博客</li>
-</ul>
-<p>用带格式的记事本打开_config.yml（<strong>站点配置文件</strong>）</p>
-<ol>
-<li><p>修改网站相关信息<br> title: (标题)<br> subtitle: (副标题)<br> description: (站点描述，可以是你喜欢的一句签名)<br> author: (作者)<br> language: zh-Hans<br> timezone: Asia/Shanghai<br><strong>注意：</strong>每一项的填写，”:”后面都要保留一个空格，下同。</p>
-</li>
-<li><p>配置部署<br>（在sublime text中按ctrl+f，输入deploy，回车，即可找到对应项。）<br> deploy:<br> &nbsp;&nbsp;type: git<br> &nbsp;&nbsp;repo:<br> &nbsp;&nbsp;branch: master<br>其中repo项是Github上创建好的仓库的地址，可以通过如下图所示的方式得到：</p>
-</li>
-</ol>
-<p><img src="http://img01.sogoucdn.com/app/a/100520146/0fbe21630e6b2d47e01ba0e929a8f1cd" alt="此处输入图片的描述"></p>
-<h2 id="发表一篇文章"><a href="#发表一篇文章" class="headerlink" title="发表一篇文章"></a>发表一篇文章</h2><p>在bash输入：</p>
-<pre><code>hexo new 文章标题
-</code></pre><p>我们可以在本地博客文件夹<code>source-&gt;_posts</code>文件夹下看到我们新建的markdown文件。<br>用Markdown编辑器（我用的是<a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="noopener">Cmd Markdown</a>）打开文件，输入内容，点右上角的齿轮，导出Markdown到<code>source-&gt;_posts</code>文件夹，然后进行本地发布：</p>
-<pre><code>hexo server
-</code></pre><p>打开浏览器，输入：</p>
-<pre><code>http://localhost:4000/
-</code></pre><p>目前发布的博客只能在本机查看，怎么让其他人看到我们写的博客呢？接下来我们进行博客的部署。<br>（注意要等出现 $ 再输入下一个命令。）</p>
-<pre><code>hexo clean
-hexo generate
-hexo deploy
-</code></pre><p>若出现错误:</p>
-<pre><code>ERROR Deployer not found : git
-</code></pre><p>执行命令:</p>
-<pre><code>npm install hexo-deployer-git --save
-hexo g
-hexo d
-</code></pre><p>若接下来出现错误:</p>
-<pre><code>Please tell me who you are.
-</code></pre><p>这个错误是因为当前本地的Git还没配置用户信息，所以执行以下命令:</p>
-<pre><code>git config --global user.email &quot;github的注册邮箱&quot;
-git config --global user.name &quot;github昵称&quot;
-hexo d
-</code></pre><p>然后在弹出框中输入用户名和密码。</p>
-<p>这时候我们的博客已经部署到网上了，我们在浏览器地址栏输入我们的网址即可访问。</p>
-<pre><code>github昵称.github.io
-</code></pre><p>本文参考<a href="https://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="noopener">代码咖啡</a>的教程</p>
-<h2 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h2><p>（进行主题配置时，可以配置完一两项后就进行部署，即hexo clean，hexo g，hexo d，防止出现不知道是哪一步出现错误的情况，出现错误就将该项重做一次；同时，部署存在延时现象，可能不能马上看到效果。）</p>
-<ul>
-<li><a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="noopener">next官方文档</a></li>
-<li><a href="https://www.jianshu.com/p/5973c05d7100" target="_blank" rel="noopener">代码咖啡</a></li>
-<li><a href="https://segmentfault.com/a/1190000009544924" target="_blank" rel="noopener">segmentfault</a></li>
-</ul>
-<p>Markdown语法：</p>
-<ul>
-<li><a href="https://www.appinn.com/markdown/" target="_blank" rel="noopener">https://www.appinn.com/markdown/</a></li>
-</ul>
-
-          
+          什么是 Hexo？Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。
+安装node.js点击进入node.js官网，下载稳定版或最新版进行安装。
+安装git点击这里进入git的下载网站，下载git的安装包
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/03/18/搭建hexo博客及配置主题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
